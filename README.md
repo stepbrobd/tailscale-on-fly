@@ -4,27 +4,29 @@ Forked from <https://github.com/patte/fly-tailscale-exit>.
 
 ## Setup
 
-You'll need to modify `Dockerfile`, `fly.toml` and `start.sh` before you deploy to Fly.io.
+You'll need to modify `Dockerfile`, `fly.toml` and `start.sh` before deploy to Fly.io.
 
 ### `Dockerfile`
 
-Change `ARG TSFILE=tailscale_1.26.2_amd64.tgz` to whatever the latest on <https://pkgs.tailscale.com/stable/>.
+Optional: Double check the version specified matches the latest version available at <https://pkgs.tailscale.com/stable/>.
+
+GitHub Action will auto update Tailscale version on Sundays.
 
 ### `fly.toml`
 
-Change `app = "com-stepbrobd-vpn"` to you own app name.
+Change `app = "com-stepbrobd-vpn"` to your preferred app name.
 
 ### `setup.sh`
 
-Chage `--hostname=com-stepbrobd-vpn-${FLY_REGION}` to your preferred hostname.
+Change `--hostname=com-stepbrobd-vpn-${FLY_REGION}` to your preferred hostname.
 
-## Deploy
+## Deployment
 
 Make sure you have a Tailscale account, a Fly.io account, and a computer with `flyctl` installed.
 
-1. Go to <https://login.tailscale.com/admin/settings/keys> to generate a new key.
+1. Go to <https://login.tailscale.com/admin/settings/keys> to generate a new auth key.
 
-2. Run `fly launch` to initiallize the app, do not deploy at this step.
+2. Run `fly launch` to initialize the app (do NOT deploy at this step).
 
 3. Run `fly secrets set TAILSCALE_AUTH_KEY=YOUR-KEY`, replace `YOUR_KEY` with the key generated in step 1.
 
