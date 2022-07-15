@@ -30,4 +30,4 @@ Make sure you have a Tailscale account, a Fly.io account, and a computer with `f
 
 4. Run `fly deploy`.
 
-5. Scale the app if you want, see documentation 
+5. Scale the app if you want, see documentation <https://fly.io/docs/reference/regions/#fly-io-regions>.
