@@ -23,7 +23,7 @@ fi
 
 until /app/tailscale up \
     --authkey=${TAILSCALE_AUTH_KEY} \
-    --hostname=fly-${FLY_REGION} \
+    --hostname=com-stepbrobd-server-${FLY_REGION} \
     --advertise-exit-node
 do
     sleep 0.1
