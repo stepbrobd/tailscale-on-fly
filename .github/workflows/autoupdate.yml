@@ -24,7 +24,6 @@ jobs:
         if [ "$current_version" != "$latest_version" ]; then
           sed -i "1 s/.*/ARG TSVERSION=$latest_version/" Dockerfile
         fi
-        rm Dockerfile.bak
     - name: Commit & Push changes
       uses: actions-js/push@master
       with:
