@@ -22,8 +22,9 @@ jobs:
         current_version=$(head -n1 Dockerfile | sed -e "s/^ARG TSVERSION=//")
         latest_version=$(curl https://pkgs.tailscale.com/stable/ | grep tailscale_ -m 1 | cut -d'_' -f 2)
         if [ "$current_version" != "$latest_version" ]; then
-          sed -i "1 s/.*/ARG TSVERSION=$latest_version/" Dockerfile
+          sed -i.bak "1 s/.*/ARG TSVERSION=$latest_version/" Dockerfile
         fi
+        rm Dockerfile.bak
     - name: Commit & Push changes
       uses: actions-js/push@master
       with:
