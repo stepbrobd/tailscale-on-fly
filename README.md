@@ -1,4 +1,4 @@
-# Tailscale Exit Routes with Fly.io
+# Tailscale on Fly.io
 
 Forked from <https://github.com/patte/fly-tailscale-exit>.
 
