@@ -1,5 +1,7 @@
 # Tailscale on Fly.io
 
+![GitHub Action Status](https://github.com/StepBroBD/Tailscale-on-Fly.io/actions/workflows/Workflow.yml/badge.svg)
+
 Forked from <https://github.com/patte/fly-tailscale-exit>.
 
 ## Setup
