@@ -1,4 +1,4 @@
-name: Autoupdate
+name: Auto Update
 
 on:
   schedule:
@@ -6,7 +6,7 @@ on:
   workflow_dispatch:
 
 jobs:
-  build:
+  Update:
     runs-on: ubuntu-latest
     steps:
     - uses: actions/checkout@master
