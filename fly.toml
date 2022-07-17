@@ -1,8 +1,10 @@
-# fly.toml file generated for com-stepbrobd-vpn on 2022-07-15T12:53:39-06:00
-
 app = "com-stepbrobd-vpn"
 kill_signal = "SIGINT"
 kill_timeout = 5
+
+[deploy]
+  strategy = "rolling"
+  max-per-region = 1
 
 [env]
   PORT = "41641"
