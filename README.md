@@ -35,3 +35,7 @@ Make sure you have a Tailscale account, a Fly.io account, and a computer with `f
 4. Run `fly deploy`.
 
 5. Scale the app if you want, see documentation <https://fly.io/docs/reference/regions/#fly-io-regions>.
+
+## Redeployment
+
+`redeploy.py` will delete exit node machines on your Tailnet matching criteria and redeploy based on your local `flyctl` configuration.
