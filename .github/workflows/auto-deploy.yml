@@ -23,7 +23,7 @@ jobs:
           cache: "pip"
       - name: Cleanup
         run: |
-          python install -r requirements.txt
+          python -m pip install -r requirements.txt
           python cleanup.py
         env:
           TS_API_DOMAIN: ${{ secrets.TS_API_DOMAIN }}
