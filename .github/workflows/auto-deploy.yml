@@ -10,6 +10,7 @@ on:
 
 jobs:
   Tailscale:
+    if: ${{ github.event.workflow_run.conclusion == 'success' }}
     runs-on: ubuntu-latest
     steps:
       - name: Checkout
@@ -30,11 +31,12 @@ jobs:
           TS_TAG: ${{ secrets.TS_TAG }}
           TS_API_TOKEN: ${{ secrets.TS_API_TOKEN }}
   Fly:
-      runs-on: ubuntu-latest
-      needs: Tailscale
-      steps:
-        - uses: actions/checkout@v3
-        - uses: superfly/flyctl-actions/setup-flyctl@master
-        - run: flyctl deploy --remote-only
-          env:
-            FLY_API_TOKEN: ${{ secrets.FLY_API_TOKEN }}
+    if: ${{ github.event.workflow_run.conclusion == 'success' }}
+    runs-on: ubuntu-latest
+    needs: Tailscale
+    steps:
+      - uses: actions/checkout@v3
+      - uses: superfly/flyctl-actions/setup-flyctl@master
+      - run: flyctl deploy --remote-only
+        env:
+          FLY_API_TOKEN: ${{ secrets.FLY_API_TOKEN }}
