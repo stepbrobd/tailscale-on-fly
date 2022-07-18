@@ -1,3 +1,6 @@
+### Enviorment variables
+.env
+
 ### VisualStudioCode template
 .vscode/*
 !.vscode/settings.json
