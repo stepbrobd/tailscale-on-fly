@@ -29,9 +29,11 @@ jobs:
           TS_API_DOMAIN: ${{ secrets.TS_API_DOMAIN }}
           TS_TAG: ${{ secrets.TS_TAG }}
           TS_API_TOKEN: ${{ secrets.TS_API_TOKEN }}
-      - name: Setup Fly.io
-        uses: superfly/flyctl-actions/setup-flyctl@master
-      - name: Deploy
-        run: flyctl deploy --remote-only
-        env:
-          FLY_API_TOKEN: ${{ secrets.FLY_API_TOKEN }}
+  Fly:
+      runs-on: ubuntu-latest
+      steps:
+        - uses: actions/checkout@v3
+        - uses: superfly/flyctl-actions/setup-flyctl@master
+        - run: flyctl deploy --remote-only
+          env:
+            FLY_API_TOKEN: ${{ secrets.FLY_API_TOKEN }}
