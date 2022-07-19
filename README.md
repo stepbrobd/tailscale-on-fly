@@ -1,8 +1,10 @@
 # Tailscale on Fly.io
 
 ![GitHub Action Status](https://github.com/StepBroBD/Tailscale-on-Fly.io/actions/workflows/auto-update.yml/badge.svg)
+(Pass -> new version updated / Fail -> no update)
 
 ![GitHub Action Status](https://github.com/StepBroBD/Tailscale-on-Fly.io/actions/workflows/auto-deploy.yml/badge.svg)
+(Pass -> deployed to Fly.io / Fail -> deployment failed)
 
 Forked from <https://github.com/patte/fly-tailscale-exit>.
 
