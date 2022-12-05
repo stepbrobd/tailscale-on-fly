@@ -59,9 +59,12 @@ def get_fly_io_exit_routes() -> dict:
     devices = {}
 
     for device in response["devices"]:
-        # Only match machines both have expected ACL tag and is in Fly.io region.
-        if TS_TAG in device["tags"] and device["hostname"][-3:] in FLY_IO_REGIONS:
-            devices[device["hostname"]] = device["id"]
+        try:
+            # Only match machines both have expected ACL tag and is in Fly.io region.
+            if TS_TAG in device["tags"] and device["hostname"][-3:] in FLY_IO_REGIONS:
+                devices[device["hostname"]] = device["id"]
+        except KeyError:
+            pass
 
     return devices
 
