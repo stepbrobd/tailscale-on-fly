@@ -21,6 +21,7 @@ fi
 until /app/tailscale up \
     --authkey=${TAILSCALE_AUTH_KEY} \
     --hostname=com-stepbrobd-vpn-${FLY_REGION} \
+    --ssh \
     --advertise-exit-node
 do
     sleep 0.1
