@@ -1,21 +1,17 @@
 app = "com-stepbrobd-vpn"
+primary_region = "bos"
 kill_signal = "SIGINT"
-kill_timeout = 5
+kill_timeout = "5s"
 
 [deploy]
-  strategy = "rolling"
-  max-per-region = 1
+strategy = "rolling"
 
 [env]
-  PORT = "41641"
-
-[experimental]
-  auto_rollback = false
-  private_network = true
+PORT = "41641"
 
 [[services]]
-  internal_port = 41641
-  protocol = "udp"
+protocol = "udp"
+internal_port = 41641
 
-  [[services.ports]]
-    port = "41641"
+[[services.ports]]
+port = 41641
