@@ -1,5 +1,8 @@
 # Tailscale on Fly.io
 
+> [!WARNING]
+> Deprecated in favor of [Tailscale Mullvad add-on](https://tailscale.com/blog/mullvad-integration).
+
 ![GitHub Action Status](https://github.com/StepBroBD/Tailscale-on-Fly.io/actions/workflows/auto-update.yml/badge.svg)
 (Pass -> new version updated / Fail -> no update)
 
